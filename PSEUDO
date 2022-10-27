@@ -1,0 +1,13 @@
+
+create password generator
+-randomly generate passwork that meets certain criteria
+-button click creates action of generating a password
+-ALERT-returns series of prompts for criteria
+    1.length of password options min 8 characters max of 128
+    2. include uppercase
+    3. include lowercase
+    4 include number character
+    5. include special characters
+    6. must select at least one type. if error to no then must go back through the list of options (loop)
+    7. if answered at least one criteria then a password is generated to meet selected criteria
+-ALERT: Password provided
