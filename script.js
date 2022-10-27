@@ -2,13 +2,37 @@
 // list out the criteria options we must select yes or no to in Alert
 var criterias = ["uppercase", "lowercase", " numeric", "special characters"];
 
-// This alert prompt user on page to select the different criterias
-alert("Please select which criteria you'd like in your password.");
+// This "confirm alert" prompts user on page to select the different criterias
+// alert("Please select which criteria you'd like in your password.");4 loop for length of password
+var characterLength = prompt(
+  "select your character length between 8 and 128 characters"
+);
+console.log(characterLength);
 
-// How do I create an automatic procession of questions needing to be asked? why isn't inside of my alert finding global criterias array?
-// alert("Would you like your password to have + "criterias [0}", + ?");
+var upperCase = confirm("Select ok if you'd like uppercases in your password.");
+console.log(upperCase);
 
-// Need to track to ensure 1 or more criteria is accepted. This would be an if statement about equal to or less than value of response true. If statements confuse me. it would be
+var lowerCase = confirm(
+  "Select ok if you'd like lower cases in your password."
+);
+console.log(lowerCase);
+
+var numberCharacters = confirm(
+  "Select ok if you'd like numbers in your password."
+);
+console.log(numberCharacters);
+
+var specialCharacters = confirm(
+  "Select ok if you'd like special characters in your password."
+);
+console.log(specialCharacters);
+
+// Need to track to ensure 1 or more criteria is accepted. and operator &&
+//
+// if (var&&var&&var&&)
+
+// return:keeps other code from being done
+// alert select one criteria before generating password.
 // if (userChoice >= 1{
 // return password output;
 // else {
@@ -16,7 +40,6 @@ alert("Please select which criteria you'd like in your password.");
 
 // the we would have to cycle back through alert options until true statement of one or more criterias selected?
 
-// var userChoice =
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
