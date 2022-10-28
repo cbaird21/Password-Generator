@@ -1,6 +1,6 @@
 // Assignment code here
 // list out the criteria options we must select yes or no to in Alert
-var criterias = ["uppercase", "lowercase", " numeric", "special characters"];
+var upperCase= ["A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" Y" "Z"]
 
 // This "confirm alert" prompts user on page to select the different criterias
 // alert("Please select which criteria you'd like in your password.");4 loop for length of password
@@ -50,6 +50,11 @@ if(specialCharacters){
 };
 
 console.log(newChars);
+
+// create final password:
+var finalPassword = []
+
+// create random password for loop
 
 
 // return:keeps other code from being done
