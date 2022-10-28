@@ -1,7 +1,7 @@
 // Assignment code here
-// Get references to the #generate element
+// activates generate as a button
 var generateBtn = document.querySelector("#generate");
-// all arrays
+// all arrays created for values
 var lowerCaseArr = [
   "a",
   "b",
@@ -63,14 +63,18 @@ var upperCaseArr = [
 var numbersArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var specialArr = ["!", "@", "#", "$", "*", "%"];
-// This "confirm alert" prompts user on page to select the different criterias
-//create function
+//create function for what to combine together for password generation. the critera
 function generatePassword() {
   var passwordLength = prompt(
     "Chose a length of your password between 8 and 128 characters."
   );
   passwordLength = Number(passwordLength);
   console.log(passwordLength);
+
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Password length must be between 8 and 128 characters");
+    return null;
+  }
 
   var upperCase = confirm(
     "Please confirm if you'd like uppercases in your password."
@@ -92,59 +96,55 @@ function generatePassword() {
   );
   console.log(special);
 
-  // Need to track to ensure 1 or more criteria is accepted. and operator &&
-  //
-  // if (var&&var&&var&&)
+  // creating new varChars to embody if the user choses okay or not on criteria. This is written to say if it's true uppperCase pull from that array and continues until completed.
   var newChars = [];
+  var guarenteedChars = [];
 
   if (upperCase) {
     newChars = newChars.concat(upperCaseArr);
+    var randomUpper = Math.floor(Math.random() * upperCaseArr.length);
+    guarenteedChars.push(upperCaseArr[randomUpper]);
   }
-  console.log(newChars);
 
   if (lowerCase) {
     newChars = newChars.concat(lowerCaseArr);
+    var randomLower = Math.floor(Math.random() * lowerCaseArr.length);
+    guarenteedChars.push(lowerCaseArr[randomLower]);
   }
-
   if (numbers) {
     newChars = newChars.concat(numbersArr);
+    var randomNum = Math.floor(Math.random() * numbersArr.length);
+    guarenteedChars.push(numbersArr[randomNum]);
   }
-
   if (special) {
     newChars = newChars.concat(specialArr);
+    var randomSpec = Math.floor(Math.random() * specialArr.length);
+    guarenteedChars.push(specialArr[randomSpec]);
   }
 
-  console.log(newChars);
+  console.log(guarenteedChars);
 
   // create final password:
   var finalPassword = [];
 
-  // create random password for loop
-  for (var i = 0; i <= passwordLength; i++) {
+  // create random password using for loop
+  for (var i = 0; i < passwordLength - guarenteedChars.length; i++) {
     var randomNumber = Math.floor(Math.random() * newChars.length);
     finalPassword = finalPassword.concat(newChars[randomNumber]);
-    console.log(finalPassword);
   }
+
+  // this guarentees all selected criteria is at the end of the password.
+  finalPassword = finalPassword.concat(guarenteedChars);
+
   // omits ray elements seperated by periods is what join does
   finalPassword = finalPassword.join("");
   console.log(newChars);
   console.log(finalPassword);
   return finalPassword;
 }
-
 // return:keeps other code from being done
-// alert select one criteria before generating password.
-// if (userChoice >= 1{
-// return password output;
-// else {
-// return "must select one or more criteria"}
 
-// the we would have to cycle back through alert options until true statement of one or more criterias selected?
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
+// // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -152,7 +152,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // giving option of generating a different password?
