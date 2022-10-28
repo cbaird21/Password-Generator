@@ -66,7 +66,7 @@ var specialArr = ["!", "@", "#", "$", "*", "%"];
 //create function for what to combine together for password generation. the critera
 function generatePassword() {
   var passwordLength = prompt(
-    "Chose a length of your password between 8 and 128 characters."
+    "Choose a length of your password between 8 and 128 characters."
   );
   passwordLength = Number(passwordLength);
   console.log(passwordLength);
@@ -87,12 +87,12 @@ function generatePassword() {
   console.log(lowerCase);
 
   var numbers = confirm(
-    "please confirm if you'd like numbers in your password."
+    "Please confirm if you'd like numbers in your password."
   );
   console.log(numbers);
 
   var special = confirm(
-    "pleaseconfirm if you'd like special characters in your password."
+    "Please confirm if you'd like special characters in your password."
   );
   console.log(special);
 
