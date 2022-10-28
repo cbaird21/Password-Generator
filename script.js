@@ -30,6 +30,27 @@ console.log(specialCharacters);
 // Need to track to ensure 1 or more criteria is accepted. and operator &&
 //
 // if (var&&var&&var&&)
+var newChars =[]
+
+if(upperCase){
+  newChars= newChars.concat"upperCaseArr";
+};
+console.log(newChars);
+
+if(lowerCase){
+  newChars= newChars.concat"lowerCase";
+};
+
+if(numberCharacters{
+  newChars= newChars.concat"numberCharacters";
+};
+
+if(specialCharacters){
+  newChars= newChars.concat"specialCharacters";
+};
+
+console.log(newChars);
+
 
 // return:keeps other code from being done
 // alert select one criteria before generating password.
